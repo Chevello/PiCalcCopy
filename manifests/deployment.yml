@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "myfirstk8scluster-abf6"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "myfirstk8scluster-abf6"
+  template:
+    metadata:
+      labels:
+        app: "myfirstk8scluster-abf6"
+    spec:
+      containers:
+        - name: "myfirstk8scluster-abf6"
+          image: "k8slearning.azurecr.io/myfirstk8scluster"
+          ports:
+          - containerPort: 3000
